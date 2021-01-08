@@ -100,6 +100,13 @@ func TestParser_complete(t *testing.T) {
 						}),
 					},
 				},
+				Datasources: Datasources{
+					DatasourceRef{Type: "amazon-ami", Name: "test"}: Datasource{
+						Type:  "amazon-ami",
+						Name:  "test",
+						value: cty.StringVal("foo"),
+					},
+				},
 				Sources: map[SourceRef]SourceBlock{
 					refVBIsoUbuntu1204:  {Type: "virtualbox-iso", Name: "ubuntu-1204"},
 					refAWSEBSUbuntu1604: {Type: "amazon-ebs", Name: "ubuntu-1604"},
